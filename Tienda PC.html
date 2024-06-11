@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Componentes de Computadores</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda de Componentes de Computadores</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quienes Somos</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider" id="slider">
+        <ul class="slides">
+            <li class="slide" id="slide1">
+                <a href="#">
+                    <img src="img/pantalla.png" alt="Pantallas">
+                </a>
+            </li>
+            <li class="slide" id="slide2">
+                <a href="#">
+                    <img src="img/case.png" alt="Case">
+                </a>
+            </li>
+            <li class="slide" id="slide3">
+                <a href="#">
+                    <img src="img/mouse.png" alt="Mouse">
+                </a>
+            </li>
+            <li class="slide" id="slide4">
+                <a href="#">
+                    <img src="img/teclado.png" alt="Teclado">
+                </a>
+            </li>
+            <li class="slide" id="slide5">
+                <a href="#">
+                    <img src="img/cascos.png" alt="Audífonos">
+                </a>
+            </li>
+        </ul>
+        <ul class="slider-controler">
+            <li><a href="#slide1">&bullet;</a></li>
+            <li><a href="#slide2">&bullet;</a></li>
+            <li><a href="#slide3">&bullet;</a></li>
+            <li><a href="#slide4">&bullet;</a></li>
+            <li><a href="#slide5">&bullet;</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="left-column">
+            <h2>Productos</h2>
+            <img src="img/cascos.png" alt="Producto 1" class="product-img">
+            <img src="img/case.png" alt="Producto 2" class="product-img">
+            <img src="img/mouse.png" alt="Producto 3" class="product-img">
+        </div>
+        <div class="right-column">
+            <h2>Noticias y Eventos</h2>
+            <p>Noticia 1: Cooler Master nos ha enseñado varias de sus soluciones de Refrigeración Líquida, que complementan los diseños que tiene de disipadores por aire. El fabricante ha lanzado varios modelos con diferentes configuraciones que sirven para procesadores Intel y AMD.</p>
+            <p>Noticia 2: Conocido por sus memorias, G.Skill también cuenta con otro tipo de soluciones como Refrigeración Líquida a la que se puede invertir el giro de los ventiladores mediante software. Pero no solo tiene memorias de todo tipo, como las nuevas CAMM2 DDR5, sino que G.Skill también ofrece algunos.</p>
+            <p>Evento 1: Nuevos teclados Montech de 75% de tamaño, triple conectividad y hueco para guardar el receptor <a href="https://www.geeknetic.es/Noticia/31943/Nuevos-teclados-Montech-de-75-de-tamano-triple-conectividad-y-hueco-para-guardar-el-receptor.html">Más información</a>.</p>
+        </div>
+    </div>
+
+    <div class="social-media">
+        <h2>Redes Sociales</h2>
+        <p>Síguenos en nuestras redes sociales</p>
+        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Componentes de Computadores. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const sliderControler = document.querySelectorAll('.slider-controler li a');
+        let currentIndex = 0;
+
+        sliderControler.forEach((control, index) => {
+            control.addEventListener('click', () => {
+                slides.style.transform = `translateX(-${index * 100}%)`;
+                sliderControler[currentIndex].classList.remove('active');
+                control.classList.add('active');
+                currentIndex = index;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
